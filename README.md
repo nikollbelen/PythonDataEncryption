@@ -1,14 +1,9 @@
-# HandwrittenTextToDigital
-A GitHub repository dedicated to the process of transcribing handwritten text into digital text. This project provides tools and techniques to bridge the gap between traditional handwritten notes and the digital realm. Explore methods, algorithms, and technologies to convert scanned or photographed handwritten text into editable and searchable digital content. 
-
+# PythonAudioBookCreation
+A project that converts written text into audio files, enabling easy listening anytime, anywhere. Leveraging text-to-speech technology, it delivers a natural auditory experience.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Install pytesseract
+Install gTTS
 
 ```
-$ pip install pytesseract
+$ pip install gTTS
 ```
-
-Install tesseract-ocr
-
-[Download tesseract-ocr Zip File](https://github.com/UB-Mannheim/tesseract/wiki)
