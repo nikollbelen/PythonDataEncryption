@@ -1,10 +1,14 @@
-# PythonSQLiteCRUD
-A comprehensive CRUD (Create, Read, Update, Delete) application implemented using Python and SQLite. This project offers a practical demonstration of utilizing Python programming language in conjunction with SQLite, a lightweight and efficient relational database management system. Explore the functionality and versatility of CRUD operations within a Python environment, providing insights into database interaction, data manipulation, and seamless integration for a variety of applications.
+# HandwrittenTextToDigital
+A GitHub repository dedicated to the process of transcribing handwritten text into digital text. This project provides tools and techniques to bridge the gap between traditional handwritten notes and the digital realm. Explore methods, algorithms, and technologies to convert scanned or photographed handwritten text into editable and searchable digital content. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Install cryptography
+Install pytesseract
 
 ```
-$ pip install cryptography
+$ pip install pytesseract
 ```
+
+Install tesseract-ocr
+
+[Download tesseract-ocr Zip File](https://github.com/UB-Mannheim/tesseract/wiki)
