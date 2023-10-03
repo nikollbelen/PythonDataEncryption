@@ -1,38 +1,69 @@
-from cryptography.fernet import Fernet
+import sqlite3
 
-def generar_clave():
-  return Fernet.generate_key()
+# Conexion a la base de datos
+conn = sqlite3.connect("database.db")
+cursor = conn.cursor()
 
-def encriptar_texto(texto, clave):
-  f = Fernet(clave)
-  texto_encriptado = f.encrypt(texto.encode())
-  return texto_encriptado
+# Crear tabla si no existe
+cursor.execute(
+    """
+    CREATE TABLE IF NOT EXISTS usuarios(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        nombre TEXT,
+        email TEXT
+    )"""
+)
 
-def desencriptar_texto(texto_encriptado, clave):
-  f = Fernet(clave)
-  texto_desencriptado = f.decrypt(texto_encriptado).decode()
-  return texto_desencriptado
+conn.commit()
 
-# Se genera una clave
+# Crear registro -> C
+def crear_usuario(nombre:str, email) -> str:
+    cursor.execute("INSERT INTO usuarios (nombre, email) VALUES(?, ?)", (nombre, email))
+    conn.commit()
+    return "Usuario agregado"
 
-clave_secreta = generar_clave()
-print("*"*20)
-print(f"Clave secreta: {clave_secreta}")
+# Obtener usuarios -> R
+def obtener_usuarios() -> list:
+    cursor.execute("SELECT id, nombre, email FROM usuarios")
+    usuarios = cursor.fetchall()
 
-# Se crea el texto
+    lista_usuarios = []
+    for usuario in usuarios:
+        lista_usuarios.append(usuario)
 
-texto = "Esta es una informacion de suma importancia"
-print("*"*20)
-print(f"Texto: {texto}")
+    return lista_usuarios
 
-# Se encripta el texto
+# Actualizar usuario por su id -> U
+def actualizar_usuario(id, nombre, email):
+    cursor.execute("UPDATE usuarios SET nombre=?, email=? WHERE id = ?", (nombre,email,id))
+    conn.commit()
+    return "Usuario actualizado"
 
-texto_encriptado = encriptar_texto(texto, clave_secreta)
-print("*"*20)
-print(f"Texto encriptado: {texto_encriptado}")
+# Eliminar usuario -> D
+def eliminar_usuario(id) -> str:
+    cursor.execute("DELETE FROM usuarios WHERE id = ?", (id,))
+    conn.commit()
+    return "Usuario eliminado"
 
-# Se desencripta el texto
+# Leer registro con su id
+def obtener_usuario(id: int):
+    cursor.execute("SELECT id, nombre, email FROM usuarios WHERE id = ?", (id,))
+    usuario = cursor.fetchone()
 
-texto_desencriptado = desencriptar_texto(texto_encriptado, clave_secreta)
-print("*"*20)
-print(f"Texto desencriptado: {texto_desencriptado}")
+    if usuario:
+        return usuario
+    return "Usuario no encontrado"
+
+# Crear usuarios -> C
+# crear_usuario("Harry", "harry@gmail.com")
+# crear_usuario("Ron", "ron@gmail.com")
+# crear_usuario("Hermione", "hermione@gmail.com")
+
+# Obtener usuarios -> R
+print(obtener_usuarios())
+
+# Actualizar usuarios -> U
+#print(actualizar_usuario("3", "Ron2", "ron2@gmail.com"))
+
+# Eliminar usuario -> D
+print(eliminar_usuario(6))
