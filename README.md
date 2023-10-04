@@ -1,11 +1,16 @@
-# TextTranslation
+# ScrapingWeb
 
-Python-based GitHub repository focusing on text translation functionalities.
+This repository focuses on web scraping, a technique for extracting data from websites, developed using Python. It provides a collection of scripts and tools that enable automated extraction and analysis of relevant information from web pages.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Install googletrans==4.0.0-rc1
+Install requests
 
 ```
-$ pip install googletrans==4.0.0-rc1
+$ pip install requests
 ```
 
+Install beautifulsoup4
+
+```
+$ pip install beautifulsoup4
+```
