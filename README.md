@@ -1,11 +1,11 @@
-# TextTranslation
+# PyTestUnitIntegrationTesting
 
-Python-based GitHub repository focusing on text translation functionalities.
+GitHub repository dedicated to showcasing best practices and implementations of unit and integration testing using PyTest, a popular testing framework for Python.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Install googletrans==4.0.0-rc1
+Install pytest
 
 ```
-$ pip install googletrans==4.0.0-rc1
+$ pip install pytest
 ```
 
