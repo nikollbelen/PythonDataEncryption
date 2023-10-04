@@ -1,16 +1,4 @@
-# ScrapingWeb
+# BetterCodeTipsAndTricks
 
-This repository focuses on web scraping, a technique for extracting data from websites, developed using Python. It provides a collection of scripts and tools that enable automated extraction and analysis of relevant information from web pages.
+GitHub repository dedicated to offering a curated collection of nine practical tips and tricks to enhance coding skills and produce better-quality code. The repository emphasizes coding best practices, optimization techniques, and strategies to improve code readability, maintainability, and efficiency.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Install requests
-
-```
-$ pip install requests
-```
-
-Install beautifulsoup4
-
-```
-$ pip install beautifulsoup4
-```
