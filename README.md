@@ -1,16 +1,11 @@
-# RealTimeAudioTranscription
+# TextTranslation
 
-Explore how to instantly convert speech and audio into written text, enabling rapid information capture and analysis. This project employs advanced audio signal processing and speech recognition techniques to achieve accurate, real-time transcriptions.
+Python-based GitHub repository focusing on text translation functionalities.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Install SpeechRecognition
+Install googletrans==4.0.0-rc1
 
 ```
-$ pip install SpeechRecognition
+$ pip install googletrans==4.0.0-rc1
 ```
 
-Install PyAudio
-
-```
-$ pip install PyAudio
-```
