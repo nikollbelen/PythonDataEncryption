@@ -1,10 +1,9 @@
-import os
-from dotenv import load_dotenv
+import cv2
 
-load_dotenv(".env.pro")
+def leer_QR(ruta_qr):
+    img = cv2.imread(ruta_qr)
+    detector = cv2.QRCodeDetector()
+    data = detector.detectAndDecode(img)
+    return data[0]
 
-user_name = os.getenv("USER_NAME")
-email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
-
-print(user_name, email, password)
+print(leer_QR("img.png"))

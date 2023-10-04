@@ -1,13 +1,13 @@
-# EnvVariableManagement
+# QRCodeReader
 
-GitHub repository dedicated to providing best practices and examples for effectively managing environment variables in software development projects. Understanding and properly utilizing environment variables is crucial for configuring and securing applications across various environments.
+Read QR Code with Python
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Install python-dotenv
+Install opencv-python-headless
 
 ```
-$ pip install python-dotenv
+$ pip install opencv-python-headless
 ```
 
 
