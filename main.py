@@ -1,8 +1,10 @@
-from gtts import gTTS
+import gofile as go 
 
-archivo = open("text.txt", "r", encoding="utf-8")
-texto = archivo.read()
-archivo.close()
+def subir_archivo(archivo):
+    cur_server = go.getServer()
+    print(f"El servidor es: {cur_server}")
 
-tts = gTTS(text = texto, lang = "es")
-tts.save("audio-libro.mp3")
+    url_descarga = go.uploadFile(archivo)
+    print(f"El link del archivo subido es: {url_descarga['downloadPage']}")
+
+subir_archivo("imagen.png")
