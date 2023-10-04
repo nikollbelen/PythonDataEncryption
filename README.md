@@ -1,13 +1,11 @@
-# QRCodeReader
-
-Read QR Code with Python
+# LaptopNotifications
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Install opencv-python-headless
+Install plyer
 
 ```
-$ pip install opencv-python-headless
+$ pip install plyer
 ```
 
 

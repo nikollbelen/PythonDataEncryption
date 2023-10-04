@@ -1,9 +1,10 @@
-import cv2
+import time
+from plyer import notification
 
-def leer_QR(ruta_qr):
-    img = cv2.imread(ruta_qr)
-    detector = cv2.QRCodeDetector()
-    data = detector.detectAndDecode(img)
-    return data[0]
-
-print(leer_QR("img.png"))
+if __name__ == "__main__":
+    notification.notify(
+        title = "Alerta de prueba",
+        message = "Este es el cuerpo de la notificacion",
+        timeout = 10,
+    )
+    time.sleep(10)
