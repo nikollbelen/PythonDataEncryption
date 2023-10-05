@@ -1,2 +1,10 @@
-# PythonFilterMapReduce
-GitHub repository focused on the essential concepts of filtering, mapping, and reducing data using Python. 
+# PDFTextExtraction
+Extraer texto de un PDF con Python.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Install pdfplumber
+
+```
+$ pip install pdfplumber -q
+```
