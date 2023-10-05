@@ -1,8 +1,33 @@
-import pdfplumber as pp
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
-with pp.open("pdf-prueba.pdf") as book:
-    for page_no, page in enumerate(book.pages, start=1):
-        print(f"{page_no = }")
-        data = page.extract_text()
-        print(data.strip())
-        print("-" * 100)
+# Definir las credenciales
+remitente = 'alicialopezjara585@gmail.com'
+password = 'wobr xqbl gxwu znik'
+
+# Definir los detalles del destinatario
+destinatario = "nikoll.bonilla.hancco@gmail.com"
+asunto = "Prueba de correo"
+
+# Crear el mensaje
+mensaje = MIMEMultipart()
+mensaje["From"] = remitente
+mensaje["To"] = destinatario
+mensaje["Subject"] = asunto
+
+# Agregar el cuerpo del mensaje
+cuerpo = "Este es el cuerpo del email"
+mensaje.attach(MIMEText(cuerpo, "plain"))
+
+# Iniciar sesion en servidor SMTP de gmail
+server = smtplib.SMTP("smtp.gmail.com", 587)
+server.starttls()
+server.login(remitente,password)
+
+# Enviar correo 
+texto = mensaje.as_string()
+server.sendmail(remitente, destinatario, texto)
+server.quit()
+
+print("Correo enviado")
