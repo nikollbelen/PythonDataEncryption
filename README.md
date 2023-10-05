@@ -1,2 +1,10 @@
-# WordEncryptor
-Encriptor personalizado de Palabras
+# ImageBackgroundRemoval
+Eliminar fondo de una imagen
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Install rembg
+
+```
+$ pip install rembg
+```
