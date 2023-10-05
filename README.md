@@ -1,11 +1,11 @@
-# LaptopNotifications
+# ImageToPencilSketch
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Install plyer
+Install opencv-python
 
 ```
-$ pip install plyer
+$ pip install opencv-python
 ```
 
 
