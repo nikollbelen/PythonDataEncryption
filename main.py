@@ -1,23 +1,19 @@
-import asyncio
+# FILTER
+#  Filtrar numeros impares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+impares = list(filter(lambda x: x % 2 != 0 , numeros))
+print(impares)
+print("-" * 100)
 
-# Definimos la primera tarea asincrona
-async def tarea_1():
-    print("Tarea 1 iniciada")
-    await asyncio.sleep(1) # Esperar un segundo
-    print("Tarea 1 finalizada")
+# MAP
+#  Elevar al cuadrado los numeros de una lista
+cuadrados = list(map(lambda y: y**2, numeros))
+print(numeros)
+print("-" * 100)
 
-async def tarea_2():
-    print("Tarea 2 iniciada")
-    await asyncio.sleep(1) # Esperar un segundo
-    print("Tarea 2 finalizada")
+# REDUCE
+#  Sumar todos los numeros de una lista
+from functools import reduce
 
-async def tarea_paralelo():
-    # Creamos dos tareas a partir de las funciones tarea_1() y tarea_2()
-    _tarea_1 = asyncio.create_task(tarea_1())
-    _tarea_2 = asyncio.create_task(tarea_2())
-
-    # Ejecutar ambas tareas
-    await asyncio.gather(_tarea_1, _tarea_2)
-
-# Ejecutar la funcion tarea_paralelo
-asyncio.run(tarea_paralelo())
+suma = reduce(lambda x, z: x + z, numeros)
+print(suma)
