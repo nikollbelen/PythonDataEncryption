@@ -1,33 +1,28 @@
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import json
 
-# Definir las credenciales
-remitente = 'alicialopezjara585@gmail.com'
-password = 'wobr xqbl gxwu znik'
+def encriptar_mensaje(mensaje: str):
+    diccionario = {}
 
-# Definir los detalles del destinatario
-destinatario = "nikoll.bonilla.hancco@gmail.com"
-asunto = "Prueba de correo"
+    # Abrir diccionario.json
+    with open("diccionario.json") as file:
+        diccionario = dict(json.load(file))
+    
+    mensaje_encriptado = ""
+    diccionario = diccionario["palabras"]
 
-# Crear el mensaje
-mensaje = MIMEMultipart()
-mensaje["From"] = remitente
-mensaje["To"] = destinatario
-mensaje["Subject"] = asunto
+    # Iterar a traves de cada letra del mensaje
+    for letra in mensaje:
+        # Si la letra esta en la cadena, agregar la palabra correspondiente
+        if letra.upper() in diccionario:
+            mensaje_encriptado += diccionario[letra.upper()] + " "
+        # Si la letra no esta agregar la letra original
+        else:
+            mensaje_encriptado += letra
+    return mensaje_encriptado
 
-# Agregar el cuerpo del mensaje
-cuerpo = "Este es el cuerpo del email"
-mensaje.attach(MIMEText(cuerpo, "plain"))
+mensaje = "Hola, esta es una prueb@"
+mensaje_encriptado = encriptar_mensaje(mensaje)
 
-# Iniciar sesion en servidor SMTP de gmail
-server = smtplib.SMTP("smtp.gmail.com", 587)
-server.starttls()
-server.login(remitente,password)
-
-# Enviar correo 
-texto = mensaje.as_string()
-server.sendmail(remitente, destinatario, texto)
-server.quit()
-
-print("Correo enviado")
+# Imprimir mensaje original y encriptado
+print(f"Mensaje original: {mensaje}")
+print(f"Mensaje encriptado: {mensaje_encriptado}")
