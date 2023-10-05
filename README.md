@@ -1,11 +1,5 @@
-# ImageToPencilSketch
+# BackdoorCreationHacking
+Hacking con PYTHON - Cómo crear un Backdoor 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Install opencv-python
-
-```
-$ pip install opencv-python
-```
 
 
