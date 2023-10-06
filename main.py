@@ -1,5 +1,10 @@
-from rembg import remove
-from PIL import Image
+def operacion(n1, n2, operacion):
+    resultado = f"{n1} {operacion} {n2}"
+    return eval(resultado) # La funcion eval() resuelve la operacion que esta dentro de una cadena
 
-quitar_fondo = remove(Image.open("img.png")) # Remover el fondo 
-quitar_fondo.save("img_sin_fondo.png") # Guarda la nueva imagen sin fondo
+n1 = input("Ingrese el primer numero: ")
+n2 = input("Ingrese el segundo numero: ")
+ope = input("Ingrese la operacion: ")
+
+print("-" * 100)
+print(f"El resultado es: {operacion(n1, n2, ope)}")

@@ -1,10 +1,2 @@
-# ImageBackgroundRemoval
-Eliminar fondo de una imagen
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Install rembg
-
-```
-$ pip install rembg
-```
+# SimpleCalculatorWithoutIfOrSwitch
+Calculadora básica sin hacer uso de if ni Switch
