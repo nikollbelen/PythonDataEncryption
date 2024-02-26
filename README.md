@@ -2,6 +2,10 @@
 
 This repository contains various Python projects, each hosted in a separate branch. Each branch represents an individual project, showcasing different applications and use cases implemented using Python.
 
+## YouTube Link
+
+#### [6 HORAS DE PROYECTOS PYTHON - MAS DE 70 PROYECTOS DISTINTOS]([link_to_branch_1](https://youtu.be/8_5HzXmPMic))
+
 ## Projects
 
 ### Project 1: [PythonDataEncryption]([link_to_branch_1](https://github.com/nikollbelen/PythonProjects/tree/PythonDataEncryption))
